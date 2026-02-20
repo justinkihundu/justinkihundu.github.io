@@ -7,7 +7,6 @@
 
 <style>
 *{box-sizing:border-box;}
-
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
@@ -16,27 +15,18 @@ color:white;
 display:flex;
 flex-direction:column;
 min-height:100vh;
+overflow-x:hidden;
 }
-
 main{flex:1;}
 
 header{
-padding:100px 20px;
+padding:110px 20px;
 text-align:center;
 background:radial-gradient(circle at top,#1e293b,#0f172a);
 }
 
-header h1{
-font-size:42px;
-margin-bottom:20px;
-}
-
-header p{
-font-size:20px;
-opacity:.85;
-max-width:700px;
-margin:auto;
-}
+header h1{font-size:42px;margin-bottom:20px;}
+header p{font-size:20px;opacity:.85;max-width:700px;margin:auto;}
 
 .btn{
 display:inline-block;
@@ -49,23 +39,23 @@ border-radius:8px;
 font-weight:bold;
 transition:.3s;
 }
-
-.btn:hover{
-background:#4f46e5;
-transform:translateY(-3px);
-}
+.btn:hover{background:#4f46e5;transform:translateY(-3px);}
 
 section{
 padding:90px 20px;
 max-width:1100px;
 margin:auto;
 text-align:center;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+section.visible{
+opacity:1;
+transform:translateY(0);
 }
 
-h2{
-font-size:32px;
-margin-bottom:50px;
-}
+h2{font-size:32px;margin-bottom:50px;}
 
 .grid{
 display:flex;
@@ -79,22 +69,55 @@ background:#1e293b;
 padding:30px;
 border-radius:12px;
 width:280px;
-transition:.3s;
 border:1px solid #334155;
+transition:.3s;
 }
-
 .card:hover{
 transform:translateY(-6px);
 border-color:#6366f1;
 }
 
-.pricing{
+.stats{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:30px;
+gap:50px;
+}
+.stat{
+font-size:40px;
+color:#6366f1;
+font-weight:bold;
+}
+.stat-label{
+margin-top:10px;
+font-size:16px;
+opacity:.8;
 }
 
+.testimonials{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+}
+.testimonial{
+background:#1e293b;
+padding:30px;
+border-radius:12px;
+width:320px;
+border:1px solid #334155;
+}
+.testimonial p{
+font-style:italic;
+opacity:.9;
+}
+
+.pricing{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+}
 .price-card{
 background:#1e293b;
 padding:40px;
@@ -103,22 +126,14 @@ width:300px;
 border:1px solid #334155;
 transition:.3s;
 }
-
 .price-card:hover{
 transform:scale(1.05);
 border-color:#6366f1;
 }
-
 .price{
 font-size:36px;
 margin:20px 0;
 color:#6366f1;
-}
-
-.highlight{
-background:linear-gradient(135deg,#1e293b,#111827);
-padding:80px 20px;
-border-radius:15px;
 }
 
 footer{
@@ -140,7 +155,7 @@ h2{font-size:24px;}
 <header>
 <h1>Landing pages qui transforment vos visiteurs en clients.</h1>
 <p>Design moderne. Structure stratégique. Optimisée pour vendre.</p>
-<a class="btn" 
+<a class="btn"
 href="https://wa.me/243997546059?text=Bonjour%20Justin,%20je%20suis%20int%C3%A9ress%C3%A9%20par%20une%20landing%20page.%20Pouvez-vous%20m%E2%80%99expliquer%20le%20processus%20?"
 target="_blank">
 Discutons de votre projet
@@ -152,72 +167,72 @@ Discutons de votre projet
 <section>
 <h2>Pourquoi mes pages convertissent mieux ?</h2>
 <div class="grid">
-<div class="card">
-<h3>🚀 Structure persuasive</h3>
-<p>Chaque section pousse le visiteur à passer à l’action.</p>
+<div class="card"><h3>🚀 Structure persuasive</h3><p>Chaque section pousse à l’action.</p></div>
+<div class="card"><h3>⚡ Chargement rapide</h3><p>Performance optimisée.</p></div>
+<div class="card"><h3>📱 Mobile first</h3><p>Optimisé smartphone.</p></div>
+<div class="card"><h3>💳 Paiement intégré</h3><p>PayPal, Stripe ou Mobile Money.</p></div>
 </div>
-<div class="card">
-<h3>⚡ Chargement rapide</h3>
-<p>Performance optimisée pour réduire les abandons.</p>
+</section>
+
+<section>
+<h2>Résultats</h2>
+<div class="stats">
+<div>
+<div class="stat" data-target="25">0</div>
+<div class="stat-label">Projets réalisés</div>
 </div>
-<div class="card">
-<h3>📱 Mobile first</h3>
-<p>Adaptée aux smartphones où se trouvent vos clients.</p>
+<div>
+<div class="stat" data-target="92">0</div>
+<div class="stat-label">% Satisfaction</div>
 </div>
-<div class="card">
-<h3>💳 Paiement intégré</h3>
-<p>PayPal, Stripe ou Mobile Money connectés facilement.</p>
+<div>
+<div class="stat" data-target="72">0</div>
+<div class="stat-label">Heures livraison</div>
 </div>
 </div>
 </section>
 
 <section>
-<h2>Projets récents</h2>
-<a class="btn" href="https://justinkihundu.github.io/laconfiance-demo/" target="_blank">Voir LaConfiance</a>
-<a class="btn" href="https://justinkihundu.github.io/coachmax-demo/" target="_blank">Voir CoachMax</a>
+<h2>Témoignages</h2>
+<div class="testimonials">
+<div class="testimonial">
+<p>"Justin a complètement transformé ma page de vente. J’ai doublé mes demandes en 2 semaines."</p>
+<strong>- Coach Business</strong>
+</div>
+<div class="testimonial">
+<p>"Design professionnel et rapide. Mes clients me prennent plus au sérieux."</p>
+<strong>- Entrepreneur Fitness</strong>
+</div>
+<div class="testimonial">
+<p>"Service fluide, communication claire, résultat impeccable."</p>
+<strong>- Formateur en ligne</strong>
+</div>
+</div>
 </section>
 
 <section>
 <h2>Tarifs</h2>
 <div class="pricing">
-
 <div class="price-card">
 <h3>Standard</h3>
 <div class="price">120€</div>
-<p>Landing page 1 section</p>
-<p>Design moderne</p>
+<p>Landing simple</p>
 <p>Responsive</p>
-<a class="btn" 
-href="https://wa.me/243997546059?text=Bonjour%20Justin,%20je%20veux%20le%20pack%20Standard%20%C3%A0%20120%E2%82%AC."
-target="_blank">
-Choisir
-</a>
+<a class="btn"
+href="https://wa.me/243997546059?text=Bonjour%20Justin,%20je%20veux%20le%20pack%20Standard."
+target="_blank">Choisir</a>
 </div>
-
 <div class="price-card">
 <h3>Premium</h3>
 <div class="price">250€</div>
-<p>Landing complète optimisée conversion</p>
-<p>Intégration paiement</p>
+<p>Landing complète</p>
+<p>Paiement intégré</p>
 <p>Support 7 jours</p>
-<a class="btn" 
-href="https://wa.me/243997546059?text=Bonjour%20Justin,%20je%20veux%20le%20pack%20Premium%20%C3%A0%20250%E2%82%AC."
-target="_blank">
-Choisir
-</a>
+<a class="btn"
+href="https://wa.me/243997546059?text=Bonjour%20Justin,%20je%20veux%20le%20pack%20Premium."
+target="_blank">Choisir</a>
 </div>
-
 </div>
-</section>
-
-<section class="highlight">
-<h2>Garantie satisfaction</h2>
-<p>Modifications incluses jusqu’à satisfaction finale.</p>
-<a class="btn" 
-href="https://wa.me/243997546059?text=Bonjour%20Justin,%20je%20souhaite%20commencer%20mon%20projet%20imm%C3%A9diatement."
-target="_blank">
-Lancer mon projet maintenant
-</a>
 </section>
 
 </main>
@@ -228,6 +243,34 @@ Lancer mon projet maintenant
 
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
+
+/* Animation compteur */
+const counters=document.querySelectorAll('.stat');
+counters.forEach(counter=>{
+const update=()=>{
+const target=+counter.getAttribute('data-target');
+const count=+counter.innerText;
+const increment=target/60;
+if(count<target){
+counter.innerText=Math.ceil(count+increment);
+setTimeout(update,30);
+}else{
+counter.innerText=target;
+}
+};
+update();
+});
+
+/* Animation scroll */
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+const top=sec.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+sec.classList.add("visible");
+}
+});
+});
 </script>
 
 </body>
